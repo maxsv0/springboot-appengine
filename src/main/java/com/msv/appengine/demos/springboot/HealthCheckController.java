@@ -16,13 +16,21 @@
 
 package com.msv.appengine.demos.springboot;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RestHomeController {
-  @GetMapping("/")
-  public String hello() {
-    return "Hello world - springboot-appengine-standard!";
-  }
+public class HealthCheckController {
+
+	@RequestMapping("/_ah/health")
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		PrintWriter out = resp.getWriter();
+		out.println("Alive.");
+	}
 }
