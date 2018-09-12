@@ -6,7 +6,7 @@
 	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
 	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
 	the specific language governing permissions and limitations under the License. -->
-	
+
 <!-- [START webxml] -->
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -14,10 +14,19 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>_ah_health</servlet-name>
+		<servlet-class>com.msv.appengine.demos.springboot.HealthCheckServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>_ah_health</servlet-name>
+		<url-pattern>/_ah/health</url-pattern>
+	</servlet-mapping>
 
 </web-app>
 <!-- [END webxml] -->
