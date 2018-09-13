@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package com.msv.appengine.demos.springboot;
+package com.msv.appengine.demos.springboot.integration.index;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.msv.appengine.demos.springboot.Application;
+import com.msv.appengine.demos.springboot.integration.AbstractIntegrationTest;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class ApplicationTests {
+@SpringBootTest(classes = Application.class)
+public class IndexControllerIT extends AbstractIntegrationTest {
+	
+	@Test
+	public void testIndexPage() {
 
-  @Test
-  public void contextLoads() {
-  }
-
+	}
 }

@@ -1,13 +1,5 @@
-<%@ page import="java.util.Date"%>
-<%@ page import="java.text.SimpleDateFormat"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <head>
-<%
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	String date = sdf.format(new Date());
-%>
-<title>THE TEST</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script src='/js/main.js'></script>
@@ -20,15 +12,11 @@
 	<div class='container'>
 		<div class='row'>
 			<div class="col-sm">
-
-				<h1>Test Page!</h1>
-				<h2>
-					Server time:
-					<%=date%></h2>
-					
-				<h1 id='jsLog'>wait...</h1>
-				<br>
-				<a href="/?showMessage=1">test Spring Controller message</a>
+				<h1>DEMO!</h1>
+				
+				<c:if test="${not empty msg}">
+					<div class="alert alert-success">${msg}</div>
+				</c:if>
 			</div>
 		</div>
 	</div>

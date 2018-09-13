@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.msv.appengine.demos.springboot;
+package com.msv.appengine.demos.springboot.service;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
